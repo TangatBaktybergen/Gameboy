@@ -1,5 +1,3 @@
-Please use this place holder to describe your project. Roughly should be DIN-A4 long. 
-
 The idea is to develop retro electronic game console. As an example , we are going to implement " Tetris " game in this project. 
 
 Electronic components: 
