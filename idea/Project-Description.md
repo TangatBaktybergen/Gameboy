@@ -1,29 +1,5 @@
 The idea is to develop retro electronic game console. As an example , we are going to implement " Tetris " game in this project. 
 
-Electronic components: 
+The basic idea of Tetris is to stack as many blocks in line as possible to get more game points. Player has 4 buttons, display and buzzer as user interface. Player can move the falling block to right and to left , rotate and drop the block faster. The player display is made of two 8x8 Matrix LED. The buzzer will create sound effect at the start and the end of the game. 
 
-1) ATTiny85
-2) 8x8 LED Dot Matrix
-3) MAX7219 Matrix Driver
-4) SN74HC55N Shift Register
-5) Button
-6) Buzzer
-7) Switch
-8) Capacitor
-9) Resistor
-
-As a brain of our project "ATTiny85" was chosen because the project does not require a lot of memory space , GPIOs and power.
-
-As an output display , console has 2 combined 8x8 LED Matrices and it is enough to play other games too.
-
-To simplify control and pin connections between matrix and ATTiny85 , the matrix driver MAX7219 is used.
-
-ATTiny85 does not have enough GPIO for the project , so the shift register SN74HC55N is used to expand GPIO of ATTiny85.
-
-4 buttons are used for control of gaming object on the display. Functions of buttons may vary depending on the game. For example, for "Tetris" controls are "Rotate block" , "Drop the block", "Go right" and "Go left".
-
-Buzzer as an audio output.Buzzer makes different sounds showing the start or the end of game.
-
-Switch to turn on/off the console. To save the battery life when its not used.
-
-Capacitors to decrease power supply noise and stabilize. Resistors to control current flow.
+The brain of the project is ATTiny85 microcontroller where rules of game will be written. Shift register as SN74HC595N is used to expand the output/input pins of ATTiny85 because we have 4 buttons and 2 matrices to connect.The matrices will be connected through MAX7219 driver. ATTiny85 has 512 bytes of memory which is enough for the simple game as Tetris or Snake. 
