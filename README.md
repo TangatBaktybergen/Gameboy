@@ -10,16 +10,16 @@ You can find a quick guide in the following [cheat sheet](https://www.markdowngu
 
 ----
 
-# Title of the project
+# Electronic game console
 
-by: *Names of the authors*
+by: *Tangat Baktybergen and Towfiqur Rahman Khan*
 
 
 **Faculty of Technology and Bionics**
 
 ***Rhine-Waal University of Applied Sciences***
 
-Date: XX January 2022
+Date: 20 October 2022
 
 ----
 
