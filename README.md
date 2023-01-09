@@ -44,38 +44,38 @@ Among these 5 action buttons, 4 buttons used for movements (Up, Down, Right, Lef
 
 ## 1 Introduction
 
-Game Boy is an 8-bit handheld gaming console. The console features  dot-matrix screen with adjustable contrast, five game control buttons (four directional buttons and "START" / "SELECT"), a single speaker and uses microcontroller as physical media for games. The color scheme is made from two tones. Due to the complexity of controling the matrix display , a simple "Simon Says" game is implemented for a demonstration purpose.[5]
+Game Boy is an 8-bit handheld gaming console. The console features  dot-matrix screen with adjustable contrast, five game control buttons (four directional buttons and "START" / "SELECT"), a single speaker and uses microcontroller as physical media for games. The color scheme is made from two tones. Due to the complexity of controling the matrix display , a simple "Simon Says" game is implemented for a demonstration purpose. [5]
 
 ### 1.1	Background
 
-The Game Boy game console developed and manufactured by Nintendo. It was first released in Japan on April 21, 1989, in North America later the same year, and in Europe in late 1990. It was designed by the same team that developed the Game & Watch series of handheld electronic games and several Nintendo Entertainment System (NES) games: Satoru Okada, Gunpei Yokoi, and Nintendo Research & Development 1.[1]
+The Game Boy game console developed and manufactured by Nintendo. It was first released in Japan on April 21, 1989, in North America later the same year, and in Europe in late 1990. It was designed by the same team that developed the Game & Watch series of handheld electronic games and several Nintendo Entertainment System (NES) games: Satoru Okada, Gunpei Yokoi, and Nintendo Research & Development 1. [1]
 
-The original internal code name for the Game Boy is Dot Matrix Game, referring to its dot-matrix display in contrast to the preceding Game & Watch series (which Yokoi had created in 1980) that has segmented LCDs pre-printed with an overlay, limiting each model to only play one game. The initials DMG came to be featured on the final product's model number: "DMG-01".The game was ultimately bundled with the Game Boy and the system was released in Japan in April 1989, North America in July, and in Europe in September the following year. Nintendo had spent $10 million on marketing the Game Boy.[1]
+The original internal code name for the Game Boy is Dot Matrix Game, referring to its dot-matrix display in contrast to the preceding Game & Watch series (which Yokoi had created in 1980) that has segmented LCDs pre-printed with an overlay, limiting each model to only play one game. The initials DMG came to be featured on the final product's model number: "DMG-01".The game was ultimately bundled with the Game Boy and the system was released in Japan in April 1989, North America in July, and in Europe in September the following year. Nintendo had spent $10 million on marketing the Game Boy. [1]
 
 
 ## 2	Literature review
 
-On March 20, 1995, Nintendo released several special edition Game Boy models with colored cases, advertising them in the "Play It Loud!" campaign known in Japan as Game Boy Bros. Play It Loud! units were manufactured in red, green, black, yellow, white, blue, and clear (transparent), or sometimes called X-Ray in the UK.[1]
+On March 20, 1995, Nintendo released several special edition Game Boy models with colored cases, advertising them in the "Play It Loud!" campaign known in Japan as Game Boy Bros. Play It Loud! units were manufactured in red, green, black, yellow, white, blue, and clear (transparent), or sometimes called X-Ray in the UK. [1]
 
-On July 21, 1996, Nintendo released the Game Boy Pocket for US$69.99: a smaller, lighter unit that required fewer batteries. It has space for two AAA batteries, which provide approximately 10 hours of gameplay. The unit is also fitted with a 3 volt, 2.35 mm x 0.75 mm DC jack which can be used to power the system. The Pocket has a smaller link port, which requires an adapter to link with the older Game Boy.[1]
+On July 21, 1996, Nintendo released the Game Boy Pocket for US$69.99: a smaller, lighter unit that required fewer batteries. It has space for two AAA batteries, which provide approximately 10 hours of gameplay. The unit is also fitted with a 3 volt, 2.35 mm x 0.75 mm DC jack which can be used to power the system. The Pocket has a smaller link port, which requires an adapter to link with the older Game Boy. [1]
 
-A clear 'skeleton' Famitsu Model-F edition appeared in 1997, which had only 5,000 units released, and a clear yellow edition.[1]
+A clear 'skeleton' Famitsu Model-F edition appeared in 1997, which had only 5,000 units released, and a clear yellow edition. [1]
 
-The Game Boy Light was released on April 14, 1998, and only available in Japan. Like the Game Boy Pocket, the system was priced at ¥6,800. The Game Boy Light is slightly bigger than the Game Boy Pocket and features an electroluminescent backlight for low-light conditions. It uses two AA batteries, which give it approximately 12 gameplay hours with the light on and 20 with it off[1]
+The Game Boy Light was released on April 14, 1998, and only available in Japan. Like the Game Boy Pocket, the system was priced at ¥6,800. The Game Boy Light is slightly bigger than the Game Boy Pocket and features an electroluminescent backlight for low-light conditions. It uses two AA batteries, which give it approximately 12 gameplay hours with the light on and 20 with it off. [1]
 
 ## 3	Methodology
 
-The display consists of 2 cathode-row 8x8 matrix which make 16 columns and 8 rows.[3]It is controlled with shift registers(Serial in Parallel out).One of the shift registers is used to send row data and the other two are in series for columns.Each shift register has 8 output pins. So, each shift register take only 8 row or 8 column control.[2]
+The display consists of 2 cathode-row 8x8 matrix which make 16 columns and 8 rows.[3]It is controlled with shift registers(Serial in Parallel out).One of the shift registers is used to send row data and the other two are in series for columns.Each shift register has 8 output pins. So, each shift register take only 8 row or 8 column control. [2]
 
 Rows are combined into one shift register while columns have two separate shift registers in series. However,when all LEDs are lit , 8 LEDs simultaneously draw current from each output pin of the shift register.The shift register's output current is 35mA and 5mA for each output pin which is not enough.Consequently, 8 row NPN transistor were added to amplify the current at the output and reduce shift register's work load. [Appendix 2]
 
-As mentioned before there are 5 buttons for control purpose. Buttons are connected to ground. Resistors were not used to save some space and they are pulled internally using programming.[Appendix 3]
+As mentioned before there are 5 buttons for control purpose. Buttons are connected to ground. Resistors were not used to save some space and they are pulled internally using programming. [Appendix 3]
 
 The buzzer is simple tone generator as output device.
 
 The microcontroller ATMega328p is implemented as in commonly used Arduino device. It has 16 MHz external clock, powered by 3 x AAA batteries which runs at 4.5 V within standards. Additional empty pins are added for furher programming of the MCU(microcontroller unit) without taking it from the pcb. The external connection pins are at RX/TX and MOSI/MISO/SCK/RESET as SPI connection. [Appendix 3]
 
-Arduino IDE was chosen as a software development environment because we are using the base microcontroller of Arduino UNO.Arduino IDE supports C/C++ and can flash code to bare microcontrollers which makes it user friendly.[4]
+Arduino IDE was chosen as a software development environment because we are using the base microcontroller of Arduino UNO.Arduino IDE supports C/C++ and can flash code to bare microcontrollers which makes it user friendly. [4]
 
 "Simon Says" is a memory game. The matrix display shows random sequence of arrows (up,down,right and left) which the player must remember and repeat using 4 push buttons.
 
