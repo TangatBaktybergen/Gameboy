@@ -110,15 +110,6 @@ digitalWrite(latchPin2, HIGH); // disable latch pin stop sending data
 
 ```
 
-Example how to draw a table:
-
-| Left Aligned | Centered | Right Aligned |
-| :---         | :---:    | ---:          |
-| Cell 1       | Cell 2   | Cell 3        |
-| Cell 4       | Cell 5   | Cell 6        |
-| OpAmp 741    | 2        | 1.00          |
-
-
 ## 4	Results
 Presenting final result of our project:
 
@@ -141,7 +132,75 @@ There are a lot of improvements can be done in the future. The main objective is
 ## 7	References
 
 * [1] https://en.wikipedia.org/wiki/Game_Boy
-* [2] 
+* [2] http://1.bp.blogspot.com/-9f4dfwi-pJM/VBQ_4wqMJLI/AAAAAAAAYBQ/UQqTrODFz9U/s1600/paul%2B(13th%2Bcopy).png
+* [3] https://leeselectronic.com/49304-large_default/led-dot-matrix-8x8-hs-1588ab-red.jpg
+* [4] https://wolles-elektronikkiste.de/en/led-dot-matrix-display-control
+* [5] https://en.wikipedia.org/wiki/Simon_Says
+
 
 ## 8	Appendices
+    
+    Appendix 1: Example snapshot of shift register from the project schematic: 
+    ![alt text](resources/sr.png "Shift register connections")
+
+    Appendix 2: Example snapshot of 8x8 dot matrix and transistors connections from the project schemaatic:
+    ![alt text](resources/ledandTransistor.png "matrixandTransistor")
+
+    Appendix 3: Table showing conections of ATMega328p I/O pins with other components.
+    Example how to draw a table:
+
+| Left Aligned | Centered | Right Aligned |
+| :---         | :---:    | ---:          |
+| Cell 1       | Cell 2   | Cell 3        |
+| Cell 4       | Cell 5   | Cell 6        |
+| OpAmp 741    | 2        | 1.00          |
+
+
+| ATMega328p pin name | Connection 
+| 1. PC6              | Reset  
+| 2. PD0              | RX   
+| 3. PD1              | TX  
+| 4. PD2              | Clock pin column SR      
+| 5. PD3              | Latch pin column SR  
+| 6. PD4              | Data pin column SR   
+| 7. VCC              | VCC  
+| 8. GND_1            | Ground      
+| 9. PB6              | Crystal  
+| 10. PB7             | Crystal 
+| 11. PD5             | Clock pin row SR        
+| 12. PD6             | Latch pin row SR   
+| 13. PD7             | Data pin row SR  
+| 14. PB0             | nothing    
+| 15. PB1             | nothing   
+| 16. PB2             | nothing  
+| 17. PB3             | MOSI         
+| 18. PB4             | MISO   
+| 19. PB5             | SCK   
+| 20. AVCC            | VCC       
+| 21. AREF            | nothing  
+| 22. GND_2           | Ground       
+| 23. PC0             | button Right  
+| 24. PC1             | button Down  
+| 25. PC2             | button Left  
+| 26. PC3             | button Event        
+| 27. PC4             | button Up   
+| 28. PC5             | Buzzer 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
