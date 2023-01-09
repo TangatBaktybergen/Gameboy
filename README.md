@@ -63,12 +63,7 @@ A clear 'skeleton' Famitsu Model-F edition appeared in 1997, which had only 5,00
 
 The Game Boy Light was released on April 14, 1998, and only available in Japan. Like the Game Boy Pocket, the system was priced at ¥6,800. The Game Boy Light is slightly bigger than the Game Boy Pocket and features an electroluminescent backlight for low-light conditions. It uses two AA batteries, which give it approximately 12 gameplay hours with the light on and 20 with it off. It was available in two standard colors: gold and silver. It also received numerous special editions, including a clear 'skeleton' Famitsu 500 edition (Model-F02) with white buttons. This edition was also limited to 5000 units, like the first Model-F. Astro Boy edition with a clear case and a picture of Astro Boy on it, an Osamu Tezuka World edition with a clear red case and a picture of his characters and a solid yellow Pokémon Center Tokyo version.[1]
 
-## 3	Theory
-If necessary please present theory in this section.
-
-This math is inline $`a^2+b^2=c^2`$.
-
-## 4	Methodology
+## 3	Methodology
 
 The display consists of 2 cathode-row 8x8 matrix which make 16 columns and 8 rows.It is controlled with shift registers(Serial in Parallel out).One of the shift registers is used to send row data and the other two are in series for columns.Each shift register has 8 output pins. So, each shift register take only 8 row or 8 column control.
 
@@ -82,13 +77,37 @@ The microcontroller ATMega328p is implemented as in commonly used Arduino device
 
 Arduino IDE was chosen as a software development environment because we are using the base microcontroller of Arduino UNO.Arduino IDE supports C/C++ and can flash code to bare microcontrollers which makes it user friendly.
 
+"Simon Says" is a memory game. The matrix display shows random sequence of arrows (up,down,right and left) which the player must remember and repeat using 4 push buttons.
 
-This is an example how to include code snippet:
-```python
-def function():
-    #indenting works just fine in the fenced code block
-    s = "Python code"
-    print s
+Game code overview:
+1. Check if a new game is starting. If it is, generate random number sequence of 0 to 3 that points which arrow and button has to be pressed. Reset the round counter as it is a new game.
+2. The number of rounds to play can be set manually. Each round the game will display arrows in a pattern, and then player has limited time to recreate the pattern by pressing corresponding control buttons.
+3. The loop is used to display arrow patterns until the player reaches the winning round number or missclick of the button leads to restart of the game.
+
+Creating random pattern of arrows:
+```startSequence():
+randomSeed(analogRead(A0));
+for(int i=0;i<=3;i++){ // there are only 4 buttons in the pattern to choose
+buttonSequence[i]=round(random(0,3));} 
+```
+Checking which button is pressed:
+```buttonCheck():
+if (digitalRead(button[0])== HIGH) { // if the button pressed return the index of arrow pattern to check
+return 0;} else if(digitalRead(button[1])==HIGH) {
+return1; 
+...
+else { return 4;} // 4 doesnot belong to array of pattern and means nothing 
+}
+```
+An example of turning all LEDs on with shift registers:
+```turnOnAll():
+digitalWrite(latchPin, LOW); // enable latch pin to transfer data to column shift register
+shiftOut(dataPin, clockPin, MSBFIRST, 255); // send 255 saying to turn on all LEDs on
+digitalWrite(latchPin, HIGH); // disable latch pin stop sending data
+digitalWrite(latchPin2, LOW); // enable latch pin to transfer data to row shift register
+shiftOut(dataPin2, clockPin2, MSBFIRST, 0); // row is cathode so set to low
+digitalWrite(latchPin2, HIGH); // disable latch pin stop sending data
+
 ```
 
 Example how to draw a table:
@@ -100,7 +119,7 @@ Example how to draw a table:
 | OpAmp 741    | 2        | 1.00          |
 
 
-## 5	Results
+## 4	Results
 Here you should present your results.
 
 This is an example how to include image:
@@ -108,19 +127,19 @@ This is an example how to include image:
 (C) Altzone, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 
 
-## 6	Discussion
+## 5	Discussion
 
 The project is successful. Device turns on after we press the "Start/Reset" button. Matrix display works perfectly and games are also functionning as desired. We can control the movements using the buttons. After finishing the game, the buzzer plays sounds too. We can also reset the game by pressing the "Start/Reset" button once again.
 
 
-## 7	Concluding Comments
+## 6	Concluding Comments
 
 After successfully making our prototype, we can say that it is possible to implement a game card system using this device.The microcontroller on the board should read the game and play from a other microcontroller that plays the role of the game card. This system allows us to play different games without programming the main controller every time by which we can easily save more memory space.
 
-## 8	References
+## 7	References
 
 * [1] https://en.wikipedia.org/wiki/Game_Boy
 * [2] 
 
-## 9	Appendices
+## 8	Appendices
 
