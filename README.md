@@ -70,15 +70,18 @@ This math is inline $`a^2+b^2=c^2`$.
 
 ## 4	Methodology
 
-The matrix displays are controlled with shift registers. One of the shift registers is used to control all the rows and the other two shift registers in series for columns. The type of the Shift registers are serial in and parallel out. These shift registers have 8 output pins. So, each shift register take 8 row or 8 column control.
+The display consists of 2 cathode-row 8x8 matrix which make 16 columns and 8 rows.It is controlled with shift registers(Serial in Parallel out).One of the shift registers is used to send row data and the other two are in series for columns.Each shift register has 8 output pins. So, each shift register take only 8 row or 8 column control.
 
-Each of the matrix display has 8 rows and 8 columns which perfectly fits to the 8 output pin of the shift register. Rows are combined into one shift register while columns have two separate shift registers in series to control. The rows of the matrix is anode and columns are cathode. The general idea is to keep both rows and columns high so there are no current to lit them. If we send low voltage to the columns, a certain ixj led turns on. Also, the display should be refreshed at certain period and turn off and on again so we can see all leds on the display.
+Rows are combined into one shift register while columns have two separate shift registers in series. However,when all LEDs are lit , 8 LEDs simultaneously draw current from each output pin of the shift register.The shift register's output current is 35mA and 5mA for each output pin which is not enough.Consequently, 8 row NPN transistor were added to amplify the current at the output and reduce shift register's work load. 
 
-As mentioned before there are 5 buttons for control purpose. Buttons are connected to ground. Resistors were not used to save some space and they are pulled internally using programming. ( Mb include code of internal pullup mode here)
+As mentioned before there are 5 buttons for control purpose. Buttons are connected to ground. Resistors were not used to save some space and they are pulled internally using programming.
 
 The buzzer is simple tone generator as output device.
 
-The microcontroller ATMega328p is implemented as it is in the Arduino device. It has 16 MHz external clock, powered by 3 x AAA batteries which runs at 4.5 V within standards. Additional empty pins are added for furher programming of the mcu without taking it from the pcb. The pins are at RX/TX and MOSI/MISO/RESET as SPI connection. 
+The microcontroller ATMega328p is implemented as in commonly used Arduino device. It has 16 MHz external clock, powered by 3 x AAA batteries which runs at 4.5 V within standards. Additional empty pins are added for furher programming of the MCU(microcontroller unit) without taking it from the pcb. The external connection pins are at RX/TX and MOSI/MISO/SCK/RESET as SPI connection. 
+
+Arduino IDE was chosen as a software development environment because we are using the base microcontroller of Arduino UNO.Arduino IDE supports C/C++ and can flash code to bare microcontrollers which makes it user friendly.
+
 
 This is an example how to include code snippet:
 ```python
