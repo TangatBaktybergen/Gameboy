@@ -120,20 +120,14 @@ Example how to draw a table:
 
 
 ## 4	Results
-Here you should present your results.
+Presenting final result of our project:
 
-This is an example how to include image:
-![alt text](resources/Open_Source_Hardware_(OSHW)_Logo_on_blank_PCB.jpg "Example Image")
-(C) Altzone, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
+The front picture of gameboy:
+![alt text](resources/bot.jpeg "Front view")
 
-This is an example how to include image:
-![alt text](resources/bot.jpeg "Example Image")
-(C) Altzone, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 
-This is an example how to include image:
-![alt text](resources/front.jpeg "Example Image")
-(C) Altzone, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
-
+The bottom picture of gameboy:
+![alt text](resources/front.jpeg "Bottom view")
 
 ## 5	Discussion
 
