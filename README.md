@@ -140,14 +140,14 @@ There are a lot of improvements can be done in the future. The main objective is
 
 ## 8	Appendices
     
-    Appendix 1: Example snapshot of shift register from the project schematic: 
-    ![alt text](resources/sr.png "Shift register connections")
+Appendix 1: Example snapshot of shift register from the project schematic: 
+![alt text](resources/sr.png "Shift register connections")
 
-    Appendix 2: Example snapshot of 8x8 dot matrix and transistors connections from the project schemaatic:
-    ![alt text](resources/ledandTransistor.png "matrixandTransistor")
+Appendix 2: Example snapshot of 8x8 dot matrix and transistors connections from the project schemaatic:
+![alt text](resources/ledandTransistor.png "matrixandTransistor")
 
-    Appendix 3: Table showing conections of ATMega328p I/O pins with other components.
-    Example how to draw a table:
+Appendix 3: Table showing conections of ATMega328p I/O pins with other components.
+Example how to draw a table:
 
 | Left Aligned | Centered | Right Aligned |
 | :---         | :---:    | ---:          |
@@ -157,7 +157,8 @@ There are a lot of improvements can be done in the future. The main objective is
 
 
 | ATMega328p pin name | Connection 
-| 1. PC6              | Reset  
+|:---                 | ---:  
+| 1. PC6              | Reset 
 | 2. PD0              | RX   
 | 3. PD1              | TX  
 | 4. PD2              | Clock pin column SR      
