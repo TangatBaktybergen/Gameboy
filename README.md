@@ -44,7 +44,7 @@ Among these 5 action buttons, 4 buttons used for movements (Up, Down, Right, Lef
 
 ## 1 Introduction
 
-Game Boy is an 8-bit handheld gaming console. The console features  dot-matrix screen with adjustable contrast, five game control buttons (four directional buttons and "START" / "SELECT"), a single speaker and uses microcontroller as physical media for games. The color scheme is made from two tones. Our Game Boy is bundled with two most iconic games “Snake” and “Tetris”.[1]
+Game Boy is an 8-bit handheld gaming console. The console features  dot-matrix screen with adjustable contrast, five game control buttons (four directional buttons and "START" / "SELECT"), a single speaker and uses microcontroller as physical media for games. The color scheme is made from two tones. Due to the complexity of controling the matrix display , a simple "Simon Says" game is implemented for a demonstration purpose.[1]
 
 ### 1.1	Background
 
