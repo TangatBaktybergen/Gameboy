@@ -131,12 +131,12 @@ The bottom picture of gameboy:
 
 ## 5	Discussion
 
-The project is successful. Device turns on after we press the "Start/Reset" button. Matrix display works perfectly and games are also functionning as desired. We can control the movements using the buttons. After finishing the game, the buzzer plays sounds too. We can also reset the game by pressing the "Start/Reset" button once again.
+The project is successful.Matrix display works perfectly and games are also functionning as desired. All components are connected correctly and perform as it is supposed to.During the project , we also gained a lot of practical experience in the manufacturing of the PCB.It showed us that the design of the PCB should be precisely checked  and there is always a big room for improvement of both hardware and software to reach user friendly PCB design.
 
 
 ## 6	Concluding Comments
 
-After successfully making our prototype, we can say that it is possible to implement a game card system using this device.The microcontroller on the board should read the game and play from a other microcontroller that plays the role of the game card. This system allows us to play different games without programming the main controller every time by which we can easily save more memory space.
+There are a lot of improvements can be done in the future. The main objective is to optimize software to control display. One of the ideas is to create a shift register library that can easily shift data to display. Another good objective is to implement a game card system using external microcontroller. This will allow player to change between games without programming the main controller every time. Finally, we would like to redesign the PCB to be more user friendly. For example, to put bigger push buttons and move them more to the center.
 
 ## 7	References
 
