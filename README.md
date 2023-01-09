@@ -19,21 +19,21 @@ by: *Tangat Baktybergen and Towfiqur Rahman Khan*
 
 ***Rhine-Waal University of Applied Sciences***
 
-Date: 20 October 2022
+Date: 9 January 2023
 
 ----
 
 ## Abstract
 
-The goal of our project is to create a simple handheld gaming device (Gameboy) using dot matrix display which can be operated with some buttons.
+The goal of our project is to create a simple handheld gaming device (Gameboy) using dot matrix as a display which can be operated with some control buttons.
 
 The components are used to create this device:
 
 - 2 8x8 dot matrix displays
-- 3 shift registers
+- 3 shift registers (SN74HC595N)
 - 1 ATMega328p microcontroller unit
-- 5 control buttons
-- 1 buzzer
+- 5 push buttons
+- 1 active buzzer
 
 Among these 5 action buttons, 4 buttons used for movements (Up, Down, Right, Left) and an event button (Start, Reset). The buzzer produces sound during the game.
 
