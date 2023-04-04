@@ -6,7 +6,7 @@
 
 # Electronic game console
 
-by: *Tangat Baktybergen and Towfiqur Rahman Khan*
+by: *Tangat Baktybergen*
 
 
 **Faculty of Technology and Bionics**
